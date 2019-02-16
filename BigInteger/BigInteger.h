@@ -15,5 +15,7 @@ namespace BigInteger {
             static vector<long> Product(vector<long> a, vector<long> b);
 
             static vector<long> ToBigInt(long n);
+
+            static vector<long> Reverse(vector<long> a);
     };
 }

@@ -51,12 +51,7 @@ namespace BigInteger {
         if (carry != 0)
             c.push_back(carry);
 
-        while (!c.empty())
-        {
-
-            d.push_back(c.back());
-            c.pop_back();
-        }
+        d = Reverse(c);
 
         return d;
     }
@@ -86,12 +81,7 @@ namespace BigInteger {
             if (carry != 0)
                 c.push_back(carry);
 
-            while (!c.empty())
-            {
-
-                d.push_back(c.back());
-                c.pop_back();
-            }
+            d = Reverse(c):
 
             d.resize(d.size() + b.size() - 1 - i, 0);
 
@@ -114,12 +104,21 @@ namespace BigInteger {
             n = (int)(n / 10);
         }
 
-        while (!res.empty())
-        {
-            res2.push_back(res.back());
-            res.pop_back();
-        }
+        res2 = Reverse(res);
 
         return res2;
+    }
+
+    vector<long> Reverse(vector<long> a)
+    {
+        vector<long> temp;
+
+        while (!a.empty())
+        {
+            temp.push_back(a.back());
+            a.pop_back();
+        }
+
+        return temp;
     }
 }
